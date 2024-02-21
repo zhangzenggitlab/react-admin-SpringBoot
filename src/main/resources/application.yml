@@ -1,0 +1,48 @@
+server:
+  port: 9000
+
+spring:
+  profiles:
+    active: pro
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/react-admin?characterEncoding=utf-8
+    username: root
+    password: root
+    servlet:
+      multipart:
+        max-file-size: 1000MB
+        max-request-size: 1000MB
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password:
+      database: 0
+      timeout: 10000
+
+mybatis-plus:
+      mapper-locations: classpath:mapper/*.xml
+      global-config:
+        db-config:
+          table-prefix: at_
+      configuration:
+        call-setters-on-nulls: true
+        map-underscore-to-camel-case: true
+        object-wrapper-factory: com.baomidou.mybatisplus.extension.MybatisMapWrapperFactory
+
+jwt:
+      secret: zz
+
+Encryption:
+      secretKey: 9!#95hsup*&$1zq7
+
+TxCos:
+      bucket:
+      region:
+      secretId:
+      secretKey:
+      url:
+      zipUploadPath:
+      uploadPath:
